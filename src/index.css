@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code", "Fira Code", monospace;
+
+  /* Background & base */
+  --color-surface: #0d0d0d;
+  --color-surface-2: #111111;
+  --color-surface-3: #1a1a1a;
+
+  /* Text */
+  --color-foreground: #e0e0e0;
+  --color-muted: #888888;
+  --color-dim: #555555;
+
+  /* Borders */
+  --color-border: #2a2a2a;
+
+  /* Accent states */
+  --color-amber: #e8a838;
+  --color-amber-dim: #b8862a;
+  --color-green: #5a8f6a;
+  --color-green-dim: #4a7a58;
+
+  /* Semantic */
+  --color-destructive: #d14c4c;
+  --color-ring: #e8a838;
+
+  /* Override Tailwind defaults for dark mode */
+  --color-white: #e0e0e0;
+  --color-black: #0d0d0d;
+
+  /* Spacing & sizing */
+  --spacing: 0.25rem;
+
+  /* Typography */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 0.9375rem;
+  --text-base--line-height: calc(1.5 / 0.9375);
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.5 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* No rounded corners — sharp */
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  border-color: var(--color-border);
+}
+
+html {
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dim);
+}
+
+/* Utility classes */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Transitions */
+.transition-colors {
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
